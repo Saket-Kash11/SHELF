@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:            #1A1612;   /* warm near-black — aged paper in dim light */
+  --surface:       #252018;   /* card backgrounds */
+  --surface-raised:#2E2820;   /* inputs, modals, bottom sheets */
+  --border:        #3D3528;   /* subtle dividers */
+  --primary:       #C8A97E;   /* parchment gold */
+  --primary-hover: #A8865A;   /* deeper amber */
+  --secondary:     #7B9E87;   /* muted sage — reading mode accent */
+  --text-primary:  #EDE0CC;   /* warm off-white */
+  --text-secondary:#9E9080;   /* muted warm grey */
+  --error:         #CF6679;
+  --tag-mood:      #8B6F9E;   /* muted violet */
+  --tag-theme:     #6F8B9E;   /* muted steel blue */
+  --tag-genre:     #9E7A6F;   /* muted terracotta */
+  --tag-setting:   #7A9E6F;   /* muted green */
+  --tag-pace:      #9E9A6F;   /* muted gold */
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+::selection {
+  background-color: rgba(200, 169, 126, 0.2);
+  color: var(--primary);
+}
+
+/* Custom animations & utilities */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-raised) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Horizontal custom scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
