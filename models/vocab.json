@@ -1,0 +1,10 @@
+{
+  "fantasy": 0,
+  "magic": 1,
+  "science": 2,
+  "fiction": 3,
+  "mystery": 4,
+  "love": 5,
+  "dark": 6,
+  "history": 7
+}
